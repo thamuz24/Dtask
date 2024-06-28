@@ -1,4 +1,4 @@
 package com.task.service;
 
-public interface IUserService {
+public interface IUserService<T> {
 }
