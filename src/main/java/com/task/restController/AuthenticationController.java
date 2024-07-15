@@ -15,14 +15,8 @@ public class AuthenticationController {
     @Autowired
     private AuthenticationService service;
 
-    @GetMapping("")
-    public ResponseEntity test() {
-        return new ResponseEntity<>("ok babe",HttpStatus.OK);
-    }
     @PostMapping("/register")
-    public ResponseEntity<AuthenticationResponse> register(
-            @RequestBody RegisterRequest request
-    ) {
+    public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest request) {
         return ResponseEntity.ok(service.register(request));
     }
 
@@ -31,6 +25,5 @@ public class AuthenticationController {
             @RequestBody AuthenticationRequest request
     ) {
         return ResponseEntity.ok(service.authenticate(request));
-
     }
 }
